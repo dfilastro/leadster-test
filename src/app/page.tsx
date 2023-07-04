@@ -1,13 +1,11 @@
-'use client';
-
-import styled from 'styled-components';
-
-const Title = styled.h1`
-  font-size: 1.5rem;
-  text-align: center;
-  color: palevioletred;
-`;
+import Body from '@/components/Body';
+import App from '@/components/Cards';
 
 export default function Home() {
-  return <Title>Test</Title>;
+  return (
+    <>
+      <Body />
+      <App />
+    </>
+  );
 }
