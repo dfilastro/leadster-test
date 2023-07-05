@@ -75,21 +75,21 @@ const cardsData: Card[] = [
   { id: 12, title: 'Card 12' },
   { id: 13, title: 'Card 13' },
   { id: 14, title: 'Card 14' },
-  { id: 14, title: 'Card 14' },
-  { id: 14, title: 'Card 14' },
-  { id: 14, title: 'Card 14' },
-  { id: 14, title: 'Card 14' },
-  { id: 14, title: 'Card 14' },
-  { id: 14, title: 'Card 14' },
-  { id: 14, title: 'Card 14' },
-  { id: 14, title: 'Card 14' },
-  { id: 14, title: 'Card 14' },
-  { id: 14, title: 'Card 14' },
-  { id: 14, title: 'Card 14' },
-  { id: 14, title: 'Card 14' },
-  { id: 14, title: 'Card 14' },
-  { id: 14, title: 'Card 14' },
-  { id: 14, title: 'Card 14' },
+  { id: 15, title: 'Card 14' },
+  { id: 16, title: 'Card 14' },
+  { id: 17, title: 'Card 14' },
+  { id: 18, title: 'Card 14' },
+  { id: 19, title: 'Card 14' },
+  { id: 20, title: 'Card 14' },
+  { id: 21, title: 'Card 14' },
+  { id: 22, title: 'Card 14' },
+  { id: 23, title: 'Card 14' },
+  { id: 24, title: 'Card 14' },
+  { id: 25, title: 'Card 14' },
+  { id: 26, title: 'Card 14' },
+  { id: 27, title: 'Card 14' },
+  { id: 28, title: 'Card 14' },
+  { id: 29, title: 'Card 14' },
   // More card data...
 ];
 
@@ -146,8 +146,7 @@ const PaginationComponent: React.FC<PaginationProps> = ({ cards, cardsPerPage })
 
         <Body className='card-container'>
           {showPage(currentPage).map((card) => (
-            <Card key={card.id} />
-            // <CardComponent key={card.id} card={card} />
+            <Card key={card.id} card={card} />
           ))}
         </Body>
         <Pagination className='pagination-container'>
