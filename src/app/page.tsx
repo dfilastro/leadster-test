@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <Body />
       <Cards />
-      <DemoSection />s
+      <DemoSection />
     </>
   );
 }
