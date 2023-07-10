@@ -1,10 +1,15 @@
 import styled from 'styled-components';
 import { BsCloudDownload } from 'react-icons/bs';
+import { useWindowSize } from '../../utils/windowSize';
 
 const Container = styled.div`
   padding: 1rem 0;
   display: flex;
   gap: 0.5rem;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
 `;
 
 const Content = styled.div<{ type: string }>`
@@ -48,10 +53,17 @@ const Content = styled.div<{ type: string }>`
         : type === 'xls'
         ? 'rgb(194,244,234)'
         : 'rgb(232,238,243)'};
+
+    @media (max-width: 1024px) {
+      font-size: 0.75rem;
+      height: 2rem;
+    }
   }
 `;
 
 export default function MaterialDownload({ card }: any) {
+  const { width: screenWidth } = useWindowSize();
+
   function handleDownload(material: any) {
     alert(`Function not implemented, you selected ${material.description}.${material.type}`);
   }
@@ -61,7 +73,7 @@ export default function MaterialDownload({ card }: any) {
       {card.materials.map((material: any) => (
         <Content type={material.type} onClick={() => handleDownload(material)}>
           <BsCloudDownload
-            size={20}
+            size={screenWidth <= 1024 ? 12 : 20}
             style={{
               padding: '0.25rem 0.5rem',
             }}

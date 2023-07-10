@@ -11,6 +11,11 @@ const Section = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1280px) {
+    height: auto;
+    padding: 2rem;
+  }
 `;
 
 const Span = styled.span`
@@ -22,25 +27,58 @@ const Container = styled.div`
   justify-content: center;
   gap: 4rem;
   align-items: center;
+
+  @media (max-width: 1280px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
 `;
 
 const ImgContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  img {
+    @media (max-width: 480px) {
+      width: 60%;
+    }
+  }
 `;
 
-const Tittle = styled.div`
+const Title = styled.div`
   font-size: 2.65rem;
   width: 35rem;
   font-weight: 500;
+
+  @media (max-width: 1280px) {
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
+  }
 `;
 
-const SubTittle = styled.div`
+const SubTitle = styled.div`
   font-weight: 500;
   font-size: 1.45rem;
   border-bottom: 2px solid rgb(200, 212, 221);
   padding-bottom: 1.5rem;
+
+  @media (max-width: 1280px) {
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9375rem;
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 const DemoButtonContainer = styled.div`
@@ -48,6 +86,23 @@ const DemoButtonContainer = styled.div`
   justify-content: start;
   gap: 1rem;
   margin-top: 0.5rem;
+
+  @media (max-width: 1280px) {
+    justify-content: center;
+  }
+
+  @media (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    @media (max-width: 480px) {
+      width: 70%;
+    }
+  }
 `;
 
 const PaymentContainer = styled.div`
@@ -56,6 +111,12 @@ const PaymentContainer = styled.div`
   display: flex;
   text-align: center;
   gap: 0.5rem;
+
+  @media (max-width: 1280px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
 `;
 
 const ContentContainer = styled.div`
@@ -67,6 +128,16 @@ const ContentContainer = styled.div`
 const CreditCard = styled.div`
   border-right: 1px solid black;
   padding-right: 0.5rem;
+
+  @media (max-width: 1280px) {
+    border-right: none;
+    padding-right: 0;
+  }
+`;
+
+const Line = styled.div`
+  display: flex;
+  gap: 0.5rem;
 `;
 
 export default function Body() {
@@ -78,12 +149,12 @@ export default function Body() {
         </ImgContainer>
 
         <ContentContainer>
-          <Tittle>
+          <Title>
             Pronto para triplicar sua <Span>Geração de Leads?</Span>
-          </Tittle>
-          <SubTittle>
+          </Title>
+          <SubTitle>
             Criação e ativação em <Span>4 minutos.</Span>
-          </SubTittle>
+          </SubTitle>
 
           <DemoButtonContainer>
             <Button
@@ -97,12 +168,17 @@ export default function Body() {
             <img src='selo_RD.png' alt='' />
           </DemoButtonContainer>
           <PaymentContainer>
-            <img src='no-card-dark.webp' alt='' />
-            <CreditCard>
-              <Span>Não</Span> é necessário Cartão de Crédito
-            </CreditCard>
-            <img src='rating.webp' alt='' width={92} height={16} />
-            <div>4.9/5 média de satisfação</div>
+            <Line>
+              <img src='no-card-dark.webp' alt='' />
+              <CreditCard>
+                <Span>Não</Span> é necessário Cartão de Crédito
+              </CreditCard>
+            </Line>
+
+            <Line>
+              <img src='rating.webp' alt='' width={92} height={16} />
+              <div>4.9/5 média de satisfação</div>
+            </Line>
           </PaymentContainer>
         </ContentContainer>
       </Container>

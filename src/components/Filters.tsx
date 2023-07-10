@@ -19,12 +19,23 @@ interface FilterProps {
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 1280px) {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
 `;
 
 const ButtonFilters = styled.div`
   display: flex;
   gap: 1rem;
   margin-bottom: 2rem;
+
+  @media (max-width: 1024px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `;
 
 const Filters: React.FC<FilterProps> = ({ buttons, sortBy, onFilterChange, onClearFilters }) => {

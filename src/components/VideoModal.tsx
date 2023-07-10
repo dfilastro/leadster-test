@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import MaterialDownload from '@/components/MaterialButton';
+import MaterialDownload from '@/components/MaterialDownloadButton';
 
 interface VideoModalProps {
   card: any;
@@ -27,6 +27,15 @@ const ModalContainer = styled.div`
   overflow: auto;
   border-top: 5px solid #2c83fb;
   position: relative;
+
+  @media (max-width: 1280px) {
+    width: 50%;
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    height: auto;
+  }
 `;
 
 const ModalTitle = styled.div`
@@ -37,6 +46,11 @@ const ModalTitle = styled.div`
 
   span {
     color: #2c83fb;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 1.2rem;
+    width: 80%;
   }
 `;
 
@@ -51,7 +65,7 @@ const ModalContent = styled.div`
 `;
 
 const ModalDescription = styled.div`
-  font-size: 0.9375;
+  font-size: 0.9375rem;
   padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
@@ -59,6 +73,11 @@ const ModalDescription = styled.div`
 
   p {
     margin: 0.5rem 0;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 0.875rem;
+    padding: 1rem;
   }
 `;
 
@@ -77,6 +96,11 @@ const CloseButton = styled.button`
   font-size: 1.1rem;
   color: #7f88a6;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    top: 0.25rem;
+    right: 0.75rem;
+  }
 `;
 
 const VideoModal: React.FC<VideoModalProps> = ({ card, onClose }) => {

@@ -6,6 +6,7 @@ import Filters from '@/components/Filters';
 import Card from '@/components/Card';
 import Button2 from '@/components/Button2';
 import VideoModal from '@/components/VideoModal';
+import { useWindowSize } from '../../utils/windowSize';
 
 interface Card {
   id: number;
@@ -24,6 +25,12 @@ const Container = styled.div`
   height: 140vh;
   display: flex;
   justify-content: center;
+  align-items: center;
+
+  @media (max-width: 1280px) {
+    padding: 1rem;
+    height: auto;
+  }
 `;
 
 const Content = styled.div`
@@ -33,6 +40,11 @@ const Content = styled.div`
   align-items: center;
   width: 65%;
   padding: 5rem 0;
+
+  @media (max-width: 1280px) {
+    width: 80%;
+    padding: 2rem 0;
+  }
 `;
 
 const Menu = styled.div`
@@ -42,14 +54,20 @@ const Menu = styled.div`
 
 const Body = styled.div`
   display: grid;
-  height: 100%;
   grid-template-columns: repeat(3, 1fr);
-  text-align: center;
-  margin: 4rem 0;
   gap: 2rem;
+  margin: 4rem 0;
   padding-bottom: 4rem;
   border-bottom: 2px solid rgb(200, 212, 221);
   align-items: start;
+
+  @media (max-width: 912px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Pagination = styled.div`
@@ -385,7 +403,14 @@ const PaginationComponent: React.FC<PaginationProps> = ({ cards, cardsPerPage })
 };
 
 const Cards: React.FC = () => {
-  return <PaginationComponent cards={cardsData} cardsPerPage={9} />;
+  const { width: screenWidth } = useWindowSize();
+
+  return (
+    <PaginationComponent
+      cards={cardsData}
+      cardsPerPage={screenWidth <= 480 ? 4 : screenWidth <= 900 ? 6 : 9}
+    />
+  );
 };
 
 export default Cards;

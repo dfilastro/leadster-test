@@ -77,11 +77,19 @@ const Section = styled.section`
   flex-direction: column;
   align-items: center;
   font-size: 0.9375rem;
+
+  @media (max-width: 1024px) {
+    padding-top: 2rem;
+  }
 `;
 
 const ImgContainer = styled.div`
   display: flex;
   justify-content: center;
+
+  @media (max-width: 1024px) {
+    margin-bottom: 1.5rem;
+  }
 `;
 
 const Paragraph = styled.p`
@@ -90,13 +98,21 @@ const Paragraph = styled.p`
   color: #677294;
   font-family: 'DM Sans', sans-serif;
   margin: 0;
+
+  @media (max-width: 1024px) {
+    text-align: center;
+  }
 `;
 
-const Tittle = styled.div`
+const Title = styled.div`
   color: #2c3e50;
   font-size: 1.125rem;
   margin-bottom: 2.5rem;
   font-weight: 600;
+
+  @media (max-width: 1024px) {
+    text-align: center;
+  }
 `;
 
 const List = styled.ul`
@@ -119,6 +135,10 @@ const List = styled.ul`
       }
     }
   }
+
+  @media (max-width: 1024px) {
+    text-align: center;
+  }
 `;
 
 const LinksContainer = styled.div`
@@ -129,6 +149,12 @@ const LinksContainer = styled.div`
   gap: 6rem;
   border-bottom: 1px solid #ebeef5;
   padding-bottom: 2.5rem;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
 `;
 
 const SocialMediaIconsReact = styled.div`
@@ -151,6 +177,10 @@ const SocialMediaIconsReact = styled.div`
       color: #fff;
     }
   }
+
+  @media (max-width: 1024px) {
+    justify-content: center;
+  }
 `;
 
 const ContactContainer = styled.div`
@@ -168,6 +198,10 @@ const ContactContainer = styled.div`
   a:hover {
     color: #1f76f0;
   }
+
+  @media (max-width: 1024px) {
+    align-items: center;
+  }
 `;
 
 const CopyrightContainer = styled.div`
@@ -181,6 +215,14 @@ const CopyrightContainer = styled.div`
 
   span {
     color: #7f88a6;
+  }
+
+  @media (max-width: 1024px) {
+    width: 80%;
+    margin-top: 2rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
 `;
 
@@ -199,7 +241,7 @@ export default function Footer() {
         {data.map((item, index) => (
           <div key={index}>
             <div>
-              <Tittle>{item.title}</Tittle>
+              <Title>{item.title}</Title>
               <List>
                 {item.links?.map((link, i) => (
                   <li key={i}>
@@ -211,7 +253,7 @@ export default function Footer() {
           </div>
         ))}
         <div>
-          <Tittle>Siga a Leadster</Tittle>
+          <Title>Siga a Leadster</Title>
           <div>
             <SocialMediaIconsReact>
               <div>

@@ -11,6 +11,11 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
+
+  @media (max-width: 768px) {
+    height: auto;
+    padding: 2rem 0;
+  }
 `;
 
 const FirstLine = styled.div`
@@ -25,11 +30,20 @@ const FirstLine = styled.div`
 const SecondLine = styled.div`
   font-size: 3rem;
   font-weight: 500;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Content = styled.div`
   display: flex;
   position: relative;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const ThirdLine = styled.div`
@@ -44,6 +58,11 @@ const ThirdLine = styled.div`
 
   border-bottom: 1px solid rgb(200, 212, 221);
   padding: 0 2rem 1rem 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 2.2rem;
+    margin-top: 0;
+  }
 `;
 
 const Image = styled.img`
@@ -53,10 +72,28 @@ const Image = styled.img`
   position: absolute;
   top: -5%;
   right: 2%;
+
+  @media (max-width: 1280px) {
+    position: absolute;
+    margin-top: 2rem;
+    top: -33%;
+  }
+
+  @media (max-width: 768px) {
+    width: 1.2rem;
+    position: absolute;
+    margin-top: 2rem;
+    top: -70%;
+    right: 8%;
+  }
 `;
 
 const FourthLine = styled.div`
   font-size: 1.15rem;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 const Span = styled.span`

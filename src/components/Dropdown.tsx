@@ -7,6 +7,11 @@ const Container = styled.div`
   align-items: center;
   gap: 0.75rem;
   font-weight: 600;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 const Select = styled.select`
