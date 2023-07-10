@@ -12,6 +12,8 @@ interface ButtonData {
 interface FilterProps {
   buttons: ButtonData[];
   sortBy: string[];
+  onFilterChange: (selectedButton: string) => void;
+  onClearFilters: () => void;
 }
 
 const Container = styled.div`
@@ -25,11 +27,17 @@ const ButtonFilters = styled.div`
   margin-bottom: 2rem;
 `;
 
-const Filters: React.FC<FilterProps> = ({ buttons, sortBy }) => {
+const Filters: React.FC<FilterProps> = ({ buttons, sortBy, onFilterChange, onClearFilters }) => {
   const [selectedButton, setSelectedButton] = useState<string>('');
 
   const handleButtonClick = (value: string) => {
     setSelectedButton(value);
+    onFilterChange(value);
+  };
+
+  const handleClearFilters = () => {
+    setSelectedButton('');
+    onClearFilters();
   };
 
   return (
@@ -43,6 +51,7 @@ const Filters: React.FC<FilterProps> = ({ buttons, sortBy }) => {
             onClick={() => handleButtonClick(button.value)}
           />
         ))}
+        <Button label='Clear' onClick={handleClearFilters} selected={false} />
       </ButtonFilters>
       <div>
         <Dropdown props={sortBy} />

@@ -1,14 +1,19 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Filters from '@/components/Filters';
 import Card from '@/components/Card';
 import Button2 from '@/components/Button2';
+import VideoModal from '@/components/VideoModal';
 
 interface Card {
   id: number;
+  type: 'Agências' | 'Chatbot' | 'Marketing Digital' | 'Geração de Leads' | 'Mídia Paga';
   title: string;
+  description: string;
+  url?: string;
+  materials?: any;
 }
 
 interface CardProps {
@@ -61,36 +66,221 @@ interface PaginationProps {
 }
 
 const cardsData: Card[] = [
-  { id: 1, title: 'Card 1' },
-  { id: 2, title: 'Card 2' },
-  { id: 3, title: 'Card 3' },
-  { id: 4, title: 'Card 4' },
-  { id: 5, title: 'Card 5' },
-  { id: 6, title: 'Card 6' },
-  { id: 7, title: 'Card 7' },
-  { id: 8, title: 'Card 8' },
-  { id: 9, title: 'Card 9' },
-  { id: 10, title: 'Card 10' },
-  { id: 11, title: 'Card 11' },
-  { id: 12, title: 'Card 12' },
-  { id: 13, title: 'Card 13' },
-  { id: 14, title: 'Card 14' },
-  { id: 15, title: 'Card 14' },
-  { id: 16, title: 'Card 14' },
-  { id: 17, title: 'Card 14' },
-  { id: 18, title: 'Card 14' },
-  { id: 19, title: 'Card 14' },
-  { id: 20, title: 'Card 14' },
-  { id: 21, title: 'Card 14' },
-  { id: 22, title: 'Card 14' },
-  { id: 23, title: 'Card 14' },
-  { id: 24, title: 'Card 14' },
-  { id: 25, title: 'Card 14' },
-  { id: 26, title: 'Card 14' },
-  { id: 27, title: 'Card 14' },
-  { id: 28, title: 'Card 14' },
-  { id: 29, title: 'Card 14' },
-  // More card data...
+  {
+    id: 1,
+    type: 'Agências',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+    url: 'https://www.youtube.com/watch?v=7C2z4GqqS5E',
+    materials: [
+      { type: 'doc', description: 'Document', url: '' },
+      { type: 'xls', description: 'Spreadsheet', url: '' },
+      { type: 'ppt', description: 'Presentation', url: '' },
+    ],
+  },
+  {
+    id: 2,
+    type: 'Agências',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 2',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+    url: 'https://www.youtube.com/watch?v=7C2z4GqqS5E',
+    materials: [
+      { type: 'doc', description: 'Document2', url: '' },
+      { type: 'xls', description: 'Spreadsheet2', url: '' },
+      { type: 'zip', description: 'Folder2', url: '' },
+    ],
+  },
+  {
+    id: 3,
+    type: 'Agências',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 3',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 4,
+    type: 'Agências',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 4',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 5,
+    type: 'Agências',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 5',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 6,
+    type: 'Agências',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 6',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 7,
+    type: 'Chatbot',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 7',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 8,
+    type: 'Marketing Digital',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 8',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 9,
+    type: 'Geração de Leads',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 9',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 10,
+    type: 'Mídia Paga',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 10',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 11,
+    type: 'Agências',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 11',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 12,
+    type: 'Chatbot',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 12',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 13,
+    type: 'Marketing Digital',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 13',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 14,
+    type: 'Geração de Leads',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 14',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 15,
+    type: 'Mídia Paga',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 15',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 16,
+    type: 'Agências',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 16',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 17,
+    type: 'Chatbot',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 17',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 18,
+    type: 'Marketing Digital',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 18',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 19,
+    type: 'Geração de Leads',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 19',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 20,
+    type: 'Mídia Paga',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 20',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 21,
+    type: 'Agências',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 21',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 22,
+    type: 'Chatbot',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 22',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 23,
+    type: 'Marketing Digital',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 23',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 24,
+    type: 'Geração de Leads',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 24',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 25,
+    type: 'Mídia Paga',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 25',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 26,
+    type: 'Agências',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 26',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 27,
+    type: 'Chatbot',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 27',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 28,
+    type: 'Marketing Digital',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 28',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
+  {
+    id: 29,
+    type: 'Geração de Leads',
+    title: 'Como aumentar sua Geração de Leads feat. Traktor 29',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+  },
 ];
 
 const filters = [
@@ -105,13 +295,37 @@ const sortBy = ['Data de Publicação', 'bb', 'cc'];
 
 const PaginationComponent: React.FC<PaginationProps> = ({ cards, cardsPerPage }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = Math.ceil(cards.length / cardsPerPage);
+  const [selectedCard, setSelectedCard] = useState<any | null>(null);
+  const [filteredCards, setFilteredCards] = useState<Card[]>(cards);
+
+  useEffect(() => {
+    setCurrentPage(1); // Reset current page when filtered cards change
+  }, [filteredCards]);
+
+  const handleFilterChange = (selectedButton: string) => {
+    const filteredData = cards.filter((card) => card.type === selectedButton);
+    setFilteredCards(filteredData);
+  };
+
+  const handleClearFilters = () => {
+    setFilteredCards(cards);
+  };
+
+  const handleVideoClick = (videoUrl: any) => {
+    setSelectedCard(videoUrl);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedCard(null);
+  };
+
+  const totalPages = Math.ceil(filteredCards.length / cardsPerPage);
 
   const showPage = (pageNumber: number) => {
     const startIndex = (pageNumber - 1) * cardsPerPage;
-    const endIndex = pageNumber * cardsPerPage;
+    const endIndex = startIndex + cardsPerPage;
 
-    return cards.slice(startIndex, endIndex);
+    return filteredCards.slice(startIndex, endIndex);
   };
 
   const goToPage = (pageNumber: number) => {
@@ -130,7 +344,12 @@ const PaginationComponent: React.FC<PaginationProps> = ({ cards, cardsPerPage })
       const buttonClassName = isActive ? 'active' : '';
 
       paginationControls.push(
-        <Button2 description={i} buttonClassName={buttonClassName} onClick={() => goToPage(i)} />
+        <Button2
+          key={i}
+          description={i}
+          buttonClassName={buttonClassName}
+          onClick={() => goToPage(i)}
+        />
       );
     }
 
@@ -141,12 +360,17 @@ const PaginationComponent: React.FC<PaginationProps> = ({ cards, cardsPerPage })
     <Container>
       <Content>
         <Menu>
-          <Filters buttons={filters} sortBy={sortBy} />
+          <Filters
+            buttons={filters}
+            sortBy={sortBy}
+            onFilterChange={handleFilterChange}
+            onClearFilters={handleClearFilters}
+          />
         </Menu>
 
         <Body className='card-container'>
           {showPage(currentPage).map((card) => (
-            <Card key={card.id} card={card} />
+            <Card key={card.id} card={card} onClick={() => handleVideoClick(card)} />
           ))}
         </Body>
         <Pagination className='pagination-container'>
@@ -154,6 +378,8 @@ const PaginationComponent: React.FC<PaginationProps> = ({ cards, cardsPerPage })
           <div>{renderPaginationControls()}</div>
         </Pagination>
       </Content>
+
+      {selectedCard?.url && <VideoModal card={selectedCard} onClose={handleCloseModal} />}
     </Container>
   );
 };

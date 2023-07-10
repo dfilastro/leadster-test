@@ -69,9 +69,9 @@ const PlayButton = styled.button`
   position: relative;
 `;
 
-export default function Card({ card }: any) {
+export default function Card({ card, onClick }: any) {
   return (
-    <Container onClick={() => console.log(card.id)}>
+    <Container onClick={onClick}>
       <ImageWrapper>
         <Image src='thumbnail.png' alt='' />
         <Overlay className='overlay'>
@@ -80,7 +80,7 @@ export default function Card({ card }: any) {
           </PlayButton>
         </Overlay>
       </ImageWrapper>
-      <CardText className='text'>Como aumentar sua Geração de Leads feat. Traktor</CardText>
+      <CardText className='text'>{card.title}</CardText>
     </Container>
   );
 }

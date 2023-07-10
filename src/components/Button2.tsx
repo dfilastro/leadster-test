@@ -15,6 +15,7 @@ const Button = styled.button`
   background-color: white;
   padding: 0.25rem 0.75rem;
   border: none;
+  cursor: pointer;
 
   &.active {
     color: #1f76f0;
