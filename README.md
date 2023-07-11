@@ -19,6 +19,8 @@
 # :computer: Web Version
 
 ![Web Version](https://github.com/dfilastro/teste-teamsoft/assets/90292951/1968be9c-e22b-40ce-a6b8-d070969b1c17)
+
+
 ![Modal](https://github.com/dfilastro/teste-teamsoft/assets/90292951/9ce3d265-f454-4c03-8d27-97f8c34dd310)
 
 # 📱 Mobile Version
@@ -36,10 +38,8 @@ This project was made using the follow technologies:
 - [React Player](https://www.npmjs.com/package/react-player)
 
 # </> How to run
-```bash
-# Access the link below
-$ https://leadster-test-sigma.vercel.app/
-```
+### Go to https://leadster-test-sigma.vercel.app/
+
 or
 
 ```bash
@@ -58,7 +58,7 @@ $ npm i
 ```
 
 ```bash
-$ npm run start
+$ npm run dev
 ```
 
 Go to http://localhost:3000/ to see the result.
