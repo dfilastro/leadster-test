@@ -11,6 +11,8 @@ const Section = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  position: relative;
 
   @media (max-width: 1280px) {
     height: auto;
@@ -27,6 +29,7 @@ const Container = styled.div`
   justify-content: center;
   gap: 4rem;
   align-items: center;
+  z-index: 99;
 
   @media (max-width: 1280px) {
     flex-direction: column;
@@ -40,6 +43,8 @@ const ImgContainer = styled.div`
   align-items: center;
 
   img {
+    width: 85%;
+
     @media (max-width: 480px) {
       width: 60%;
     }
@@ -140,9 +145,34 @@ const Line = styled.div`
   gap: 0.5rem;
 `;
 
+const Triangle = styled.div`
+  background-color: rgb(230, 243, 255);
+  position: absolute;
+  width: 85rem;
+  height: 80rem;
+  rotate: 45deg;
+  z-index: 0;
+  top: 50%;
+  right: 45%;
+  border-top-left-radius: 5%;
+
+  @media (max-width: 1280px) {
+    width: 60rem;
+    height: 60rem;
+    right: 30%;
+  }
+
+  @media (max-width: 480px) {
+    width: 40rem;
+    height: 40rem;
+    right: -10%;
+  }
+`;
+
 export default function Body() {
   return (
     <Section>
+      <Triangle />
       <Container>
         <ImgContainer>
           <img src='comparativo_img_CTA.png' alt='' />

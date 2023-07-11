@@ -38,7 +38,9 @@ export default function Dropdown({ props }: any) {
       <div>Ordenar por</div>
       <Select name='Filter' id=''>
         {props.map((item: any) => (
-          <option value={item}>{item}</option>
+          <option key={item} value={item}>
+            {item}
+          </option>
         ))}
       </Select>
     </Container>
