@@ -1,34 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+   :computer: Dashboard developed from scratch. Project developed for the Leadster challenge | <a href="https://leadster.com.br/">Leadster</a>
+</p>
+<div align="center">
+  <sub> Made by
+    <a href="https://github.com/dfilastro">Diego Filastro
+  </sub>
+</div>
 
-## Getting Started
+# 📌 Contents
 
-First, run the development server:
+- [Web Version](#computer-web-version)
+- [Mobile Version](#-mobile-version)
+- [Technologies](#rocket-technologies)
+- [How to Run](#-how-to-run)
+- [Contributing](#sparkles-contributing)
+- [License](#page_facing_up-license)
+
+# :computer: Web Version
+
+![Web Version](https://github.com/dfilastro/teste-teamsoft/assets/90292951/1968be9c-e22b-40ce-a6b8-d070969b1c17)
+![Modal](https://github.com/dfilastro/teste-teamsoft/assets/90292951/9ce3d265-f454-4c03-8d27-97f8c34dd310)
+
+# 📱 Mobile Version
+
+![Mobile Version](https://github.com/dfilastro/teste-teamsoft/assets/90292951/a4b7db58-9812-4cb8-8973-c957b08cf830)
+
+# :rocket: Technologies
+
+This project was made using the follow technologies:
+
+- [Next 13](https://nextjs.org/blog/next-13)
+- [Typescript](https://www.typescriptlang.org/)
+- [Styled Components](https://styled-components.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [React Player](https://www.npmjs.com/package/react-player)
+
+# </> How to run
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+# Clone Repository
+$ git clone https://github.com/dfilastro/leadster-test.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+# Go to leadster-test folder
+$ cd leadster-test
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Install Dependencies
+$ npm i
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+$ npm run start
+```
 
-## Learn More
+Go to http://localhost:3000/ to see the result.
 
-To learn more about Next.js, take a look at the following resources:
+# :sparkles: Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Fork this repository;
+- Create a branch with your feature: `git checkout -b my-feature`;
+- Commit your changes: `git commit -m 'feat: My new feature'`;
+- Push to your branch: `git push origin my-feature`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# :page_facing_up: License
 
-## Deploy on Vercel
+This project is under the [MIT license](./LICENSE).
+Made by [Diego Filastro](https://www.linkedin.com/in/dfilastro/).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Thank you! 🌠
