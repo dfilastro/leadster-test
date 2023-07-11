@@ -124,7 +124,7 @@ const VideoModal: React.FC<VideoModalProps> = ({ card, onClose }) => {
         </ModalTitle>
 
         <ModalContent>
-          <ReactPlayer url={card.url} controls={true} />
+          <ReactPlayer url={card.url} controls={true} width={'100%'} />
         </ModalContent>
         <CloseButton onClick={onClose}>✖</CloseButton>
 
