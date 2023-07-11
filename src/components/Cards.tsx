@@ -61,7 +61,7 @@ const Menu = styled.div`
 
 const Body = styled.div`
   display: grid;
-  height: 100vh;
+  min-height: 100vh;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin: 4rem 0;
