@@ -20,7 +20,7 @@ export const cardsData: Card[] = [
     title: 'Como aumentar sua Geração de Leads feat. Traktor',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
-    url: 'https://www.youtube.com/watch?v=7C2z4GqqS5E',
+    url: 'https://www.youtube.com/watch?v=-cqQTHkOnX4',
     materials: [
       { type: 'doc', description: 'Document', url: '' },
       { type: 'xls', description: 'Spreadsheet', url: '' },
@@ -33,7 +33,7 @@ export const cardsData: Card[] = [
     title: 'Como aumentar sua Geração de Leads feat. Traktor 2',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
-    url: 'https://www.youtube.com/watch?v=7C2z4GqqS5E',
+    url: 'https://www.youtube.com/watch?v=-cqQTHkOnX4',
     materials: [
       { type: 'doc', description: 'Document2', url: '' },
       { type: 'xls', description: 'Spreadsheet2', url: '' },
@@ -46,6 +46,12 @@ export const cardsData: Card[] = [
     title: 'Como aumentar sua Geração de Leads feat. Traktor 3',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+    url: 'https://www.youtube.com/watch?v=-cqQTHkOnX4',
+    materials: [
+      { type: 'doc', description: 'Document3', url: '' },
+      { type: 'xls', description: 'Spreadsheet3', url: '' },
+      { type: 'ppt', description: 'Presentation3', url: '' },
+    ],
   },
   {
     id: 4,
@@ -53,6 +59,12 @@ export const cardsData: Card[] = [
     title: 'Como aumentar sua Geração de Leads feat. Traktor 4',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+    url: 'https://www.youtube.com/watch?v=-cqQTHkOnX4',
+    materials: [
+      { type: 'doc', description: 'Document4', url: '' },
+      { type: 'xls', description: 'Spreadsheet4', url: '' },
+      { type: 'ppt', description: 'Presentation4', url: '' },
+    ],
   },
   {
     id: 5,
@@ -60,6 +72,12 @@ export const cardsData: Card[] = [
     title: 'Como aumentar sua Geração de Leads feat. Traktor 5',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+    url: 'https://www.youtube.com/watch?v=-cqQTHkOnX4',
+    materials: [
+      { type: 'doc', description: 'Document', url: '' },
+      { type: 'xls', description: 'Spreadsheet', url: '' },
+      { type: 'ppt', description: 'Presentation', url: '' },
+    ],
   },
   {
     id: 6,
@@ -67,6 +85,12 @@ export const cardsData: Card[] = [
     title: 'Como aumentar sua Geração de Leads feat. Traktor 6',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+    url: 'https://www.youtube.com/watch?v=-cqQTHkOnX4',
+    materials: [
+      { type: 'doc', description: 'Document', url: '' },
+      { type: 'xls', description: 'Spreadsheet', url: '' },
+      { type: 'ppt', description: 'Presentation', url: '' },
+    ],
   },
   {
     id: 7,
@@ -74,6 +98,12 @@ export const cardsData: Card[] = [
     title: 'Como aumentar sua Geração de Leads feat. Traktor 7',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+    url: 'https://www.youtube.com/watch?v=-cqQTHkOnX4',
+    materials: [
+      { type: 'doc', description: 'Document', url: '' },
+      { type: 'xls', description: 'Spreadsheet', url: '' },
+      { type: 'ppt', description: 'Presentation', url: '' },
+    ],
   },
   {
     id: 8,
@@ -81,6 +111,12 @@ export const cardsData: Card[] = [
     title: 'Como aumentar sua Geração de Leads feat. Traktor 8',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+    url: 'https://www.youtube.com/watch?v=-cqQTHkOnX4',
+    materials: [
+      { type: 'doc', description: 'Document', url: '' },
+      { type: 'xls', description: 'Spreadsheet', url: '' },
+      { type: 'ppt', description: 'Presentation', url: '' },
+    ],
   },
   {
     id: 9,
@@ -88,6 +124,12 @@ export const cardsData: Card[] = [
     title: 'Como aumentar sua Geração de Leads feat. Traktor 9',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem officia laboriosam velit fugiat? Repudiandae, eum dicta amet sunt, nemo, velit modi ratione beatae officiis quam voluptatibus et totam officia!',
+    url: 'https://www.youtube.com/watch?v=-cqQTHkOnX4',
+    materials: [
+      { type: 'doc', description: 'Document', url: '' },
+      { type: 'xls', description: 'Spreadsheet', url: '' },
+      { type: 'ppt', description: 'Presentation', url: '' },
+    ],
   },
   {
     id: 10,
