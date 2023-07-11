@@ -89,8 +89,8 @@ export default function MaterialDownload({ card }: CardProps) {
 
   return (
     <Container>
-      {card.materials.map((material: MaterialProps) => (
-        <Content type={material.type} onClick={() => handleDownload(material)}>
+      {card.materials.map((material: MaterialProps, index: number) => (
+        <Content key={index} type={material.type} onClick={() => handleDownload(material)}>
           <BsCloudDownload
             size={screenWidth <= 1024 ? 12 : 20}
             style={{
