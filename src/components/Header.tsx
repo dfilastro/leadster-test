@@ -14,7 +14,7 @@ const Logo = styled.img``;
 export default function Header() {
   return (
     <Container>
-      <Logo src='logo.png' />
+      <Logo src='logo.png' alt='logo leadster' />
     </Container>
   );
 }

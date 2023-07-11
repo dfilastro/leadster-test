@@ -2,6 +2,10 @@
 
 import styled from 'styled-components';
 
+interface DropdownProps {
+  props: string[];
+}
+
 const Container = styled.div`
   display: flex;
   align-items: center;
@@ -32,12 +36,12 @@ const Select = styled.select`
   background-position-y: 50%;
 `;
 
-export default function Dropdown({ props }: any) {
+export default function Dropdown({ props }: DropdownProps) {
   return (
     <Container>
       <div>Ordenar por</div>
       <Select name='Filter' id=''>
-        {props.map((item: any) => (
+        {props.map((item: string) => (
           <option key={item} value={item}>
             {item}
           </option>

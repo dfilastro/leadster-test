@@ -38,7 +38,7 @@ const ButtonFilters = styled.div`
   }
 `;
 
-const Filters: React.FC<FilterProps> = ({ buttons, sortBy, onFilterChange, onClearFilters }) => {
+export default function Filters({ buttons, sortBy, onFilterChange, onClearFilters }: FilterProps) {
   const [selectedButton, setSelectedButton] = useState<string>('');
 
   const handleButtonClick = (value: string) => {
@@ -69,6 +69,4 @@ const Filters: React.FC<FilterProps> = ({ buttons, sortBy, onFilterChange, onCle
       </div>
     </Container>
   );
-};
-
-export default Filters;
+}

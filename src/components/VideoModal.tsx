@@ -1,8 +1,19 @@
 import styled from 'styled-components';
 import MaterialDownload from '@/components/MaterialDownloadButton';
+import ReactPlayer from 'react-player';
 
 interface VideoModalProps {
-  card: any;
+  card: {
+    id: number;
+    type: 'Agências' | 'Chatbot' | 'Marketing Digital' | 'Geração de Leads' | 'Mídia Paga';
+    title: string;
+    description: string;
+    url?: string;
+    materials: {
+      description: string;
+      type: string;
+    }[];
+  };
   onClose: () => void;
 }
 
@@ -113,9 +124,7 @@ const VideoModal: React.FC<VideoModalProps> = ({ card, onClose }) => {
         </ModalTitle>
 
         <ModalContent>
-          <video controls autoPlay>
-            <source src={card.url} type='video/mp4' />
-          </video>
+          <ReactPlayer url={card.url} controls={true} />
         </ModalContent>
         <CloseButton onClick={onClose}>✖</CloseButton>
 

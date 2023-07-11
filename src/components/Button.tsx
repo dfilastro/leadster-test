@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 interface ButtonProps {
@@ -13,7 +12,11 @@ interface ButtonProps {
   fontWeight?: string;
 }
 
-const StyledButton: any = styled.button<ButtonProps>`
+interface StyledButtonProps extends ButtonProps {
+  selected: boolean;
+}
+
+const StyledButton: any = styled.button<StyledButtonProps>`
   font-family: 'Plus Jakarta Sans', sans-serif;
   background-color: ${(props) => (props.selected ? 'rgb(0,126,255)' : 'white')};
   color: ${(props) => (props.selected ? 'white' : 'black')};
@@ -32,8 +35,6 @@ const StyledButton: any = styled.button<ButtonProps>`
   }
 `;
 
-const Button: React.FC<ButtonProps> = ({ label, ...props }) => {
+export default function Button({ label, ...props }: ButtonProps) {
   return <StyledButton {...props}>{label}</StyledButton>;
-};
-
-export default Button;
+}

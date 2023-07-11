@@ -175,7 +175,10 @@ export default function Body() {
       <Triangle />
       <Container>
         <ImgContainer>
-          <img src='comparativo_img_CTA.png' alt='' />
+          <img
+            src='comparativo_img_CTA.png'
+            alt='comparativo de clientes alcançados utilizando formulário de contato, whattsapp e leadster, os valores são 150, 230 e 450, respectivamente'
+          />
         </ImgContainer>
 
         <ContentContainer>
@@ -195,18 +198,23 @@ export default function Body() {
               fontSize='1.1rem'
               fontWeight='700'
             />
-            <img src='selo_RD.png' alt='' />
+            <img src='selo_RD.png' alt='selo de top 10 de aplicativos mais usados' />
           </DemoButtonContainer>
           <PaymentContainer>
             <Line>
-              <img src='no-card-dark.webp' alt='' />
+              <img src='no-card-dark.webp' alt='cartão com um risco na diagonal' />
               <CreditCard>
                 <Span>Não</Span> é necessário Cartão de Crédito
               </CreditCard>
             </Line>
 
             <Line>
-              <img src='rating.webp' alt='' width={92} height={16} />
+              <img
+                src='rating.webp'
+                alt='cinco estrelas, sendo que quatro e mais a metade da quinta são amarelas'
+                width={92}
+                height={16}
+              />
               <div>4.9/5 média de satisfação</div>
             </Line>
           </PaymentContainer>

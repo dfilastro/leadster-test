@@ -8,6 +8,8 @@ import Button2 from '@/components/Button2';
 import VideoModal from '@/components/VideoModal';
 import { useWindowSize } from '../../utils/windowSize';
 import { cardsData } from '../../data/cards';
+import { sortBy } from '../../data/sortBy';
+import { filters } from '../../data/filters';
 
 interface Card {
   id: number;
@@ -15,11 +17,15 @@ interface Card {
   title: string;
   description: string;
   url?: string;
-  materials?: any;
+  materials?: {
+    description: string;
+    type: string;
+  }[];
 }
 
-interface CardProps {
-  card: Card;
+interface PaginationProps {
+  cards: Card[];
+  cardsPerPage: number;
 }
 
 const Container = styled.div`
@@ -79,21 +85,6 @@ const Pagination = styled.div`
   align-items: center;
   gap: 1rem;
 `;
-
-interface PaginationProps {
-  cards: Card[];
-  cardsPerPage: number;
-}
-
-const filters = [
-  { value: 'Agências', id: 1 },
-  { value: 'Chatbot', id: 2 },
-  { value: 'Marketing Digital', id: 3 },
-  { value: 'Geração de Leads', id: 4 },
-  { value: 'Mídia Paga', id: 5 },
-];
-
-const sortBy = ['Data de Publicação', 'bb', 'cc'];
 
 const PaginationComponent: React.FC<PaginationProps> = ({ cards, cardsPerPage }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -186,7 +177,7 @@ const PaginationComponent: React.FC<PaginationProps> = ({ cards, cardsPerPage })
   );
 };
 
-const Cards: React.FC = () => {
+export default function Cards() {
   const { width: screenWidth } = useWindowSize();
 
   return (
@@ -195,6 +186,4 @@ const Cards: React.FC = () => {
       cardsPerPage={screenWidth <= 480 ? 4 : screenWidth <= 900 ? 6 : 9}
     />
   );
-};
-
-export default Cards;
+}

@@ -107,7 +107,7 @@ export default function Body() {
       <SecondLine>Menos Conversinha,</SecondLine>
       <Content>
         <ThirdLine>Mais Conversão</ThirdLine>
-        <Image src='asset-header.png' alt='' />
+        <Image src='asset-header.png' alt='Imagem esverdeada com aparência de raios solares' />
       </Content>
       <FourthLine>
         Conheça as estratégias que <Span>mudaram o jogo</Span> e como aplicá-las no seu negócio

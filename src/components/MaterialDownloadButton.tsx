@@ -2,6 +2,25 @@ import styled from 'styled-components';
 import { BsCloudDownload } from 'react-icons/bs';
 import { useWindowSize } from '../../utils/windowSize';
 
+interface CardProps {
+  card: {
+    id: number;
+    type: 'Agências' | 'Chatbot' | 'Marketing Digital' | 'Geração de Leads' | 'Mídia Paga';
+    title: string;
+    description: string;
+    url?: string;
+    materials: {
+      description: string;
+      type: string;
+    }[];
+  };
+}
+
+interface MaterialProps {
+  type: string;
+  description: string;
+}
+
 const Container = styled.div`
   padding: 1rem 0;
   display: flex;
@@ -61,16 +80,16 @@ const Content = styled.div<{ type: string }>`
   }
 `;
 
-export default function MaterialDownload({ card }: any) {
+export default function MaterialDownload({ card }: CardProps) {
   const { width: screenWidth } = useWindowSize();
 
-  function handleDownload(material: any) {
+  function handleDownload(material: MaterialProps) {
     alert(`Function not implemented, you selected ${material.description}.${material.type}`);
   }
 
   return (
     <Container>
-      {card.materials.map((material: any) => (
+      {card.materials.map((material: MaterialProps) => (
         <Content type={material.type} onClick={() => handleDownload(material)}>
           <BsCloudDownload
             size={screenWidth <= 1024 ? 12 : 20}

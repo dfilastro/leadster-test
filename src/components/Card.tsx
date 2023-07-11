@@ -3,6 +3,21 @@
 import styled from 'styled-components';
 import { FaPlay } from 'react-icons/fa';
 
+interface CardProps {
+  card: {
+    id: number;
+    type: 'Agências' | 'Chatbot' | 'Marketing Digital' | 'Geração de Leads' | 'Mídia Paga';
+    title: string;
+    description: string;
+    url?: string;
+    materials?: {
+      description: string;
+      type: string;
+    }[];
+  };
+  onClick: () => void;
+}
+
 const Container = styled.div`
   position: relative;
   box-shadow: 0px 2rem 3rem rgba(0, 0, 0, 0.068);
@@ -69,11 +84,14 @@ const PlayButton = styled.button`
   position: relative;
 `;
 
-export default function Card({ card, onClick }: any) {
+export default function Card({ card, onClick }: CardProps) {
   return (
     <Container onClick={onClick}>
       <ImageWrapper>
-        <Image src='thumbnail.png' alt='' />
+        <Image
+          src='thumbnail.png'
+          alt='imagem com a foto de um jovem e escrito ao lado marketing em 2024'
+        />
         <Overlay className='overlay'>
           <PlayButton>
             <FaPlay size={'4rem'} />
