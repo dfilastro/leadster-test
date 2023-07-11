@@ -36,6 +36,11 @@ This project was made using the follow technologies:
 - [React Player](https://www.npmjs.com/package/react-player)
 
 # </> How to run
+```bash
+# Access the link below
+$ https://leadster-test-sigma.vercel.app/
+```
+or
 
 ```bash
 # Clone Repository
