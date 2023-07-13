@@ -31,6 +31,10 @@ const Paragraph = styled.p`
   font-family: 'DM Sans', sans-serif;
   margin: 0;
 
+  a {
+    color: #1f76f0;
+  }
+
   @media (max-width: 1024px) {
     text-align: center;
   }
@@ -209,7 +213,9 @@ export default function Footer() {
             <div>
               E-mail: <a href='mailto:contato@leadster.com.br'>contato@leadster.com.br</a>
             </div>
-            <div>Telefone: (42) 98828-9851</div>
+            <div>
+              Telefone: <a>(42) 98828-9851</a>
+            </div>
           </ContactContainer>
         </div>
       </LinksContainer>

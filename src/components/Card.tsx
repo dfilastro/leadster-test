@@ -22,7 +22,7 @@ const Container = styled.div`
   position: relative;
   box-shadow: 0px 2rem 3rem rgba(0, 0, 0, 0.068);
   border-radius: 1rem;
-  height: 18rem;
+  min-height: 18rem;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
 

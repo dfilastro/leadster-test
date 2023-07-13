@@ -29,7 +29,6 @@ interface PaginationProps {
 }
 
 const Container = styled.div`
-  height: 140vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,6 +47,16 @@ const Content = styled.div`
   width: 65%;
   padding: 5rem 0;
 
+  @media (max-width: 1750px) {
+    width: 80%;
+    padding: 2rem 0;
+  }
+
+  @media (max-width: 1425px) {
+    width: 90%;
+    padding: 2rem 0;
+  }
+
   @media (max-width: 1280px) {
     width: 80%;
     padding: 2rem 0;
@@ -61,13 +70,29 @@ const Menu = styled.div`
 
 const Body = styled.div`
   display: grid;
-  min-height: 100vh;
-  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
   margin: 4rem 0;
   padding-bottom: 4rem;
   border-bottom: 2px solid rgb(200, 212, 221);
   align-items: start;
+
+  @media (max-width: 1750px) {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+
+  @media (max-width: 1596px) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  @media (max-width: 1255px) {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  @media (max-width: 1066px) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
 
   @media (max-width: 912px) {
     grid-template-columns: repeat(2, 1fr);
