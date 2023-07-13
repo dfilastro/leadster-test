@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import MaterialDownload from '@/components/MaterialDownloadButton';
 import ReactPlayer from 'react-player';
+import { useEffect } from 'react';
 
 interface VideoModalProps {
   card: {
@@ -27,6 +28,7 @@ const ModalOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
 `;
 
 const ModalContainer = styled.div`
@@ -114,7 +116,21 @@ const CloseButton = styled.button`
   }
 `;
 
-const VideoModal: React.FC<VideoModalProps> = ({ card, onClose }) => {
+export default function VideoModal({ card, onClose }: VideoModalProps) {
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [onClose]);
+
   return (
     <ModalOverlay>
       <ModalContainer>
@@ -141,6 +157,4 @@ const VideoModal: React.FC<VideoModalProps> = ({ card, onClose }) => {
       </ModalContainer>
     </ModalOverlay>
   );
-};
-
-export default VideoModal;
+}
